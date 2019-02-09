@@ -2,5 +2,5 @@
 
 $config = array(
     'AppName' => 'App',
-    'debug' => false,
+    'debug' => true,
 );

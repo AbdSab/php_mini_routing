@@ -4,7 +4,7 @@ The project is composed with two parts, Controllers and Views, the views are bas
 
 ## Usage
 Once the project is downloaded, you can start working directly by making your own controllers and views.
-As example, let's say you want to make an about us page with the route /user/profile :
+As example, let's say you want to make an user profile page with the route /user/profile :
 ```php
 class UserController extends AbstractController{
     public function profile(){
@@ -34,3 +34,8 @@ Exemple of how to show the data:
 </html>
 ```
 You can read more about the blade template in the laravel's [documentation](https://laravel.com/docs/5.7/blade).
+
+## Url Rules
+For urls with the minus sign you must separate with uppercase.
+For example :
+AboutUscontroller is the equivalent of /about-us as url.

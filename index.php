@@ -4,9 +4,21 @@
  */
 require 'files/autoloader.php';
 
+function urlToController($url){
+    $arr = str_split($url);
+    $l = count($arr);
+    for($i=0; $i<$l; $i++){
+        if($arr[$i] == "-"){
+            $arr[$i+1] = ucfirst($arr[$i+1]);
+            unset($arr[$i]);
+        }
+    }
+    return ucfirst(implode("",$arr));
+}
+
 
 $url        = explode("/", $_GET["route"]);
-$controller = (ucfirst($url[0]) == '')?"Index":ucfirst($url[0]);
+$controller = (urlToController($url[0]) == '')?"Index":urlToController($url[0]);
 $parameter  = !isset(array_slice($url, 1)[0])?'index':(array_slice($url, 1)[0] == '')?"index":array_slice($url, 1)[0];
 $args       = !isset(array_slice($url, 2)[0])?[]:(array_slice($url, 2)[0] == '')?[]:array_slice($url, 2);
 
