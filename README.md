@@ -39,3 +39,23 @@ You can read more about the blade template in the laravel's [documentation](http
 For urls with the minus sign you must separate with uppercase.
 For example :
 AboutUscontroller is the equivalent of /about-us as url.
+**Note**
+If the url /about-us is not found as controller, the program will search inside the IndexController as method.
+Exemple:
+
+**/about-us** :
+```php
+class AboutUs extends AbstractController{
+    public function index(){
+        //Show about us page
+    }
+}
+```
+Or
+```php
+class IndexController extends AbstractController{
+    public function aboutus(){
+        //Show about us page
+    }
+}
+```

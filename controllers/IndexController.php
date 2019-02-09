@@ -6,4 +6,9 @@ class IndexController extends AbstractController{
         $this->view('home', ['controller' => 'Index', 'parameter' => 'index']);
     }
 
+    public function aboutus(){
+        echo "aboutus";
+    }
+
+
 }
