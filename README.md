@@ -1,8 +1,8 @@
-#Php Mini Controller/View Framework
+# Php Mini Controller/View Framework
 A mini php framework for routing by turning the name of controllers to a seo friendly url.
 The project is composed with two parts, Controllers and Views, the views are based on the [Laravel's Blade](https://laravel.com/docs/5.7/blade) template engine.
 
-##Usage
+## Usage
 Once the project is downloaded, you can start working directly by making your own controllers and views.
 As example, let's say you want to make an about us page with the route /user/profile :
 ```php
