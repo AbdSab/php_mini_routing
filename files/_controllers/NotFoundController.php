@@ -1,6 +1,6 @@
 <?php
 
-class NotFoundController extends AbstractController{
+class NotFound extends Controller{
 
     public function index(){
         $this->view('404');

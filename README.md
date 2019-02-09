@@ -6,7 +6,7 @@ The project is composed with two parts, Controllers and Views, the views are bas
 Once the project is downloaded, you can start working directly by making your own controllers and views.
 As example, let's say you want to make an user profile page with the route /user/profile :
 ```php
-class UserController extends AbstractController{
+class User extends Controller{
     public function profile(){
         $this->view('profile');
     }
@@ -17,7 +17,7 @@ This function will search for the view named profile.blade.php in the views fold
 You can also pass parameters to the url, exemple :
 /user/profile/john
 ```php
-class UserController extends AbstractController{
+class User extends Controller{
     public function profile($name){
         $this->view('profile', ['name' => $name]);
     }
@@ -45,7 +45,7 @@ Exemple:
 
 **/about-us** :
 ```php
-class AboutUs extends AbstractController{
+class AboutUs extends Controller{
     public function index(){
         //Show about us page
     }
@@ -53,7 +53,7 @@ class AboutUs extends AbstractController{
 ```
 Or
 ```php
-class IndexController extends AbstractController{
+class Home extends Controller{
     public function aboutus(){
         //Show about us page
     }

@@ -1,6 +1,6 @@
 <?php
 
-class UserController extends AbstractController{
+class User extends Controller{
 
     public function index(){
         $this->view('home', ['controller' => 'User', 'parameter' => 'index']);

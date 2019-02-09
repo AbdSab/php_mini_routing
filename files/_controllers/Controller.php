@@ -1,7 +1,7 @@
 <?php
 use BC\Blade\Blade;
 
-abstract class AbstractController{
+abstract class Controller{
     protected $blade;
 
     public function __construct(){

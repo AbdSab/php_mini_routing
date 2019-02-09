@@ -5,17 +5,16 @@
     function searchController($_url){
 
         $url = explode("/", $_url);
-        $controller = (urlToController($url[0]) == '')?"Index":urlToController($url[0]);
+        $controller = (urlToController($url[0]) == '')?"Home":urlToController($url[0]);
         $parameter  = !isset(array_slice($url, 1)[0])?'index':(array_slice($url, 1)[0] == '')?"index":(array_slice($url, 1)[0]);
         $args       = !isset(array_slice($url, 2)[0])?[]:(array_slice($url, 2)[0] == '')?[]:array_slice($url, 2);
 
         try{
-            $controllerName = $controller."Controller";
-            $c = new $controllerName();
+            $c = new $controller();
             $c->{$parameter}(...$args);
         }catch(Error $c){
             try{
-                $controllerName = "IndexController";
+                $controllerName = "Home";
                 $c = new $controllerName();
                 $c->{$controller}();
             }catch(Error $c){
@@ -36,7 +35,7 @@
             notFound("Url not defined !");
 
         $route = explode("/",$route);
-        $controllerName = $route[0]."Controller";
+        $controllerName = $route[0];
         $c = new $controllerName();
         $c->{$route[1]}();
        
@@ -46,7 +45,7 @@
         global $config;
         if ($config['debug']) die($error);
         else{
-            $c = new NotFoundController();
+            $c = new NotFound();
             $c->index();
         }
     }
