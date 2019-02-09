@@ -1,0 +1,5 @@
+{
+    "require": {
+        "benjamincrozat/blade": "^2.0"
+    }
+}

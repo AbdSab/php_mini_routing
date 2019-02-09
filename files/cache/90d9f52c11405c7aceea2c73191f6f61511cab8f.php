@@ -8,7 +8,8 @@
 </head>
 <body>
     <div>
-        <?php echo $no ?>
+        Hello From <?php echo e($controller); ?>/<?php echo e($parameter); ?>
+
     </div>
 </body>
 </html>

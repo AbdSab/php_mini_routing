@@ -1,10 +1,9 @@
 <?php
 
-class HelloController{
-    public function index($name){
-        echo "Hedsllo ".$name;
+class IndexController extends AbstractController{
+
+    public function index(){
+        $this->view('home', ['controller' => 'Index', 'parameter' => 'index']);
     }
-    public function toto($no){
-        include("views/home.php");
-    }
+
 }
