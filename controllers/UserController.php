@@ -6,8 +6,8 @@ class UserController extends AbstractController{
         $this->view('home', ['controller' => 'User', 'parameter' => 'index']);
     }
 
-    public function dodo(){
-        $this->view('home', ['controller' => 'User', 'parameter' => 'dodo']);
+    public function profile(){
+        $this->view('home', ['controller' => 'User', 'parameter' => 'profile']);
     }
 
 }

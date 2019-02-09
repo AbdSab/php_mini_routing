@@ -17,39 +17,10 @@ function urlToController($url){
 }
 
 
-$url        = explode("/", $_GET["route"]);
-$controller = (urlToController($url[0]) == '')?"Index":urlToController($url[0]);
-$parameter  = !isset(array_slice($url, 1)[0])?'index':(array_slice($url, 1)[0] == '')?"index":(array_slice($url, 1)[0]);
-$args       = !isset(array_slice($url, 2)[0])?[]:(array_slice($url, 2)[0] == '')?[]:array_slice($url, 2);
+$url = $_GET["route"];
 
-/*
-echo "Controller : " ; var_dump($controller);
-echo "Parameter : "; var_dump($parameter);
-echo "Args : "; var_dump($args);
-*/
-
-try{
-
-    $controllerName = $controller."Controller";
-    $c = new $controllerName();
-    $c->{$parameter}(...$args);
-
-}catch(Error $c){
-
-    try{
-
-    $controllerName = "IndexController";
-    $c = new $controllerName();
-    $c->{$controller}();
-
-    }catch(Error $c){
-
-        if ($config['debug']) die($c);
-        else {
-            $c = new NotFoundController();
-            $c->index();
-        }
-
-    }
-
+if($config["autoroute"]){
+    searchController($url);
+}else{
+    searchByRoute($url);
 }

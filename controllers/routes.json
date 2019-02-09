@@ -1,0 +1,8 @@
+
+
+{
+    "home"           :  "index/index",
+    "about-us"       :  "index/aboutus",
+    "user"           :  "user/index",
+    "profile"   :  "user/profile"
+}
